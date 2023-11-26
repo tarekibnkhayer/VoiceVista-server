@@ -2,7 +2,8 @@ const middleware = require('./src/middlewares');
 const express = require('express');
 const connectDB = require('./src/db/connectDB');
 const userRoutes = require('./src/routes/users');
-const authRoutes = require('./src/routes/authentication')
+const authRoutes = require('./src/routes/authentication');
+const paymentRoutes = require('./src/routes/payments');
 
 const app = express();
 const port = process.env.PORT || 2626;
@@ -12,7 +13,7 @@ app.get('/', (req, res) => {
     res.send("VoiceVista server is Running bro");
 });
 
-app.use(userRoutes, authRoutes);
+app.use(userRoutes, authRoutes, paymentRoutes);
 
 const main = async() => {
     await connectDB();
