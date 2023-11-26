@@ -13,7 +13,7 @@ const connectDB = async() => {
     await mongoose.connect(mongoURI, {dbName: 'VoiceVista'});
     console.log('connected to DB');
    }catch(error){
-    console.error('Error connecting to DB:', error.message);
+    console.error('Error connecting to DB:', error);
     process.exit(1);
    }
 };
