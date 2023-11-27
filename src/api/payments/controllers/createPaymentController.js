@@ -1,7 +1,11 @@
 const stripe = require('stripe')(process.env.sk_test)
 const createPaymentController = async(req, res) => {
     try {
-      const {price} = req.body;
+      const {price, email} = req.body;
+      const tokenEmail = req.user.email;
+      if(email !== tokenEmail){
+        return res.status(403).send({message: 'forbidden'});
+      }
     const amount = parseInt(price * 100);
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,

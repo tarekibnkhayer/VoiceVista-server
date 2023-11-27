@@ -9,6 +9,7 @@ const PaymentSchema = new mongoose.Schema({
         required: true
     },
     date: Date,
+    transactionId: String
 });
 const Payment = mongoose.model('Payment', PaymentSchema);
 module.exports = Payment;
