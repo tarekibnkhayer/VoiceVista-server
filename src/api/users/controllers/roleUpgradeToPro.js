@@ -2,7 +2,6 @@ const User = require('../../../models/User');
 const roleUpgradeToPro = async(req, res) => {
     try {
         const email = req?.query?.email;
-        console.log('hello pro ',email);
         const tokenEmail = req.user.email;
         if(email !== tokenEmail){
             return res.status(403).send({message: 'forbidden'});
