@@ -1,2 +1,6 @@
 const createUser = require('./userController');
-module.exports = createUser;
+const roleUpgradeToPro = require('./roleUpgradeToPro');
+module.exports = {
+    createUser,
+    roleUpgradeToPro
+}
