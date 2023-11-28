@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const commentSchema = require('./comment');
 
 const SurveySchema = new mongoose.Schema({
     email: {
@@ -21,7 +22,11 @@ const SurveySchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-
+    yes: Number,
+    no: Number,
+    like: Number,
+    dislike:Number,
+    comments: [commentSchema]
 },
 {
     timestamps: true
