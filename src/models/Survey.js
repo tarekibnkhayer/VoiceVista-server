@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const commentSchema = require('./comment');
+const VoterSchema = require('./Voter');
 
 const SurveySchema = new mongoose.Schema({
     email: {
@@ -26,7 +27,8 @@ const SurveySchema = new mongoose.Schema({
     no: Number,
     like: Number,
     dislike:Number,
-    comments: [commentSchema]
+    comments: [commentSchema],
+    voters: [String]
 },
 {
     timestamps: true
