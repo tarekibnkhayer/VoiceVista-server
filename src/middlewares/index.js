@@ -6,7 +6,7 @@ require("dotenv").config();
 const middleware = (app) => {
     app.use(cors(
         {
-            origin: ['http://localhost:5173'],
+            origin: ['https://voicevista-a2040.web.app','http://localhost:5173'],
             credentials: true
         }
     ));

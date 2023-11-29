@@ -1,26 +1,13 @@
-const middleware = require('./src/middlewares');
-const express = require('express');
+require('dotenv').config()
+const http = require('http');
+const app = require('./app');
 const connectDB = require('./src/db/connectDB');
-const userRoutes = require('./src/routes/users');
-const authRoutes = require('./src/routes/authentication');
-const paymentRoutes = require('./src/routes/payments');
-const surveyRoutes = require('./src/routes/surveys');
-
-const app = express();
+const server = http.createServer(app);
 const port = process.env.PORT || 2626;
-middleware(app);
-
-app.get('/', (req, res) => {
-    res.send("VoiceVista server is Running bro");
-});
-
-app.use(userRoutes, authRoutes, paymentRoutes, surveyRoutes);
-
 const main = async() => {
     await connectDB();
-    app.listen(port, () => {
-        console.log(`hello from port ${port}`);
+    server.listen(port, () => {
+        console.log(`server is listening on port ${port}`);
     })
-}
-
+};
 main();
