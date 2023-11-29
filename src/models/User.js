@@ -14,7 +14,8 @@ const UserSchema = new mongoose.Schema({
     role: {
         type: String,
         required: true
-    }
+    },
+    votedSurveyIds : [String]
 });
 
 const User = mongoose.model('User', UserSchema);
