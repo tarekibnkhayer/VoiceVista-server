@@ -4,7 +4,8 @@ const gettingAllSurveys = require('./gettingAllSurveys');
 const valueController = require('./valueController');
 const commentController = require('./commentController');
 const voterController = require('./voterController');
-const getSelectedCatSurvey = require('./getSelectedCatSurvey')
+const getSelectedCatSurvey = require('./getSelectedCatSurvey');
+const getFeaturedSurvey = require('./getFeaturedSurvey');
 module.exports = {
     surveyController,
     gettingSurveys,
@@ -12,5 +13,6 @@ module.exports = {
     valueController,
     commentController,
     voterController,
-    getSelectedCatSurvey
+    getSelectedCatSurvey,
+    getFeaturedSurvey
 }

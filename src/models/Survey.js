@@ -27,6 +27,7 @@ const SurveySchema = new mongoose.Schema({
     no: Number,
     like: Number,
     dislike:Number,
+    report: Number,
     comments: [commentSchema],
     voters: [String],
     totalVotes : {
