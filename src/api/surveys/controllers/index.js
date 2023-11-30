@@ -7,6 +7,9 @@ const voterController = require('./voterController');
 const getSelectedCatSurvey = require('./getSelectedCatSurvey');
 const getFeaturedSurvey = require('./getFeaturedSurvey');
 const getFilteredSurvey = require('./getFilteredSurvey');
+const getSelectedSurveyByTitle = require('./getSelectedSurveyByTitle');
+const updateASurvey = require('./updateASurvey');
+const getASurvey = require('./getASurvey');
 module.exports = {
     surveyController,
     gettingSurveys,
@@ -16,5 +19,8 @@ module.exports = {
     voterController,
     getSelectedCatSurvey,
     getFeaturedSurvey,
-    getFilteredSurvey
+    getFilteredSurvey,
+    getSelectedSurveyByTitle,
+    updateASurvey,
+    getASurvey
 }
