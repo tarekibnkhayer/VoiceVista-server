@@ -1,4 +1,4 @@
-const {createUser, roleUpgradeToPro, checkRole, getVotedSurveyIds, getAllUsers, getRoleBasedUsers} = require('../../api/users');
+const {createUser, roleUpgradeToPro, checkRole, getVotedSurveyIds, getAllUsers, getRoleBasedUsers, roleChange} = require('../../api/users');
 const votedSurveys = require('../../api/users/controllers/votedSurveys');
 const verifyToken = require('../../middlewares/verifyToken');
 const router = require('express').Router();
@@ -9,4 +9,5 @@ router.patch('/votedSurveys', votedSurveys);
 router.get('/votedSurveyIds', getVotedSurveyIds);
 router.get('/users', getAllUsers);
 router.get('/roleBasedUsers', getRoleBasedUsers);
+router.patch('/roleChange', roleChange);
 module.exports = router;
